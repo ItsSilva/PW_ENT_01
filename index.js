@@ -54,6 +54,20 @@ const student = findsStudentByName(students, "Jane");
 console.log("Estudiante encontrado:", student);
 
 // Reto de ordenar estudiantes de menor a mayor
+const bubbleSortStudents = (students) => {
+  for (let i = 0; i < students.length - 1; i++) {
+    for (let j = 0; j < students.length - i - 1; j++) {
+      if (students[j].grade > students[j + 1].grade) {
+        const temp = students[j];
+        students[j] = students[j + 1];
+        students[j + 1] = temp;
+      }
+    }
+  }
+  return students;
+};
+const sortedStudents = bubbleSortStudents(students);
+console.log("Estudiantes ordenados por nota:", sortedStudents);
 
 // Reto de combinar propiedades de objetos
 const array1 = [
